@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #201e43;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .register-container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 60px #008c9e;
+      width: 400px;
+    }
+    .register-container h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #008c9e;
+    }
+    .register-container input[type="text"],
+    .register-container input[type="password"],
+    .register-container input[type="email"] {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      border: 1px solid #008c9e;
+      border-radius: 10px;
+    }
+    .register-container input[type="submit"],
+    .register-container input[type="reset"] {
+      width: 48%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      background-color: #008c9e;
+      color: white;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .register-container input[type="submit"]:hover,
+    .register-container input[type="reset"]:hover {
+      background-color: #005f6b;
+      opacity: 0.9;
+    }
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .login-link {
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+  <script>
+    function handleRegistration(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Show success notification
+      alert("Registrasi berhasil!");
+
+      // Redirect to login page
+      window.location.href = "form.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="register-container">
+    <h2>Register</h2>
+    <form action="register.php" method="POST">
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" required />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required />
+      <div class="button-container">
+        <input type="submit" value="Register" />
+        <input type="reset" value="Reset" />
+      </div>
+    </form>
+    <div class="login-link">
+      <p>Sudah punya akun? <a href="form.html">Login</a></p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- --------- UNICONS ---------- -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- --------- FAVICON ---------- -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <style>
+        :root {
+            --body-color: #201e43; /* Ungu pekat untuk latar belakang */
+            --color-white: #EEEEEE; /* Putih keabu-abuan yang lembut */
+            --text-color-second: #a591ce; /* Abu-abu terang untuk teks sekunder */
+            --first-color: #5a4bb7; /* Ungu tua tegas */
+            --first-color-hover: #443791; /* Ungu lebih tua untuk efek hover */
+            --text-black: #000000; /* Hitam untuk teks */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--body-color);
+            color: var(--text-color-second);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            height: auto;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Navigasi Bar */
+        .navbar {
+            width: 100%;
+            background-color: var(--first-color);
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .navbar a {
+            color: var(--color-white);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            max-width: 1500px; /* Maksimal lebar tabel */
+            border-collapse: collapse;
+            background-color: var(--color-white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px; /* Jarak antara tabel */
+        }
+
+        th, td {
+            border: 1px solid var(--first-color);
+            padding: 12px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        th {
+            background-color: var(--first-color);
+            color: var(--color-white);
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: var(--first-color-hover);
+            color: var(--color-white);
+        }
+
+        /* Mengubah warna teks tabel menjadi hitam */
+        td {
+            color: var(--text-black);
+        }
+        tr:hover td {
+            color: var(--color-white);
+        }
+
+        h2 {
+            color: var(--text-color-second);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+     <title>Tutorial Membuat Tabel</title>
+</head>
+<body>
+    <div class="container">
+        <!-- --------------- HEADER --------------- -->
+        <nav id="header">
+          <div class="nav-logo">
+            <p class="nav-name">Tutorial</p>
+            <span>.</span>
+          </div>
+          <div class="nav-menu" id="myNavMenu">
+            <ul class="nav_menu_list">
+              <li class="nav_list">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="circle"></div>
+              </li>
+              <li class="nav_list">
+                <a href="table.html" class="nav-link active-link">Cara Membuat Tabel</a>
+                <div class="circle"></div>
+              </li>
+              <li class="nav_list">
+                <a href="form.html" class="nav-link">Cara Membuat Form</a>
+                <div class="circle"></div>
+              </li>
+              <li class="nav_list">
+                <a href="tutorial.html" class="nav-link">Tutorial</a>
+                <div class="circle"></div>
+              </li>
+              <li class="nav_list">
+                <a href="#contact" class="nav-link">Contact</a>
+                <div class="circle"></div>
+              </li>
+            </ul>
+          </div>
+          <div class="nav-button">
+            <button class="btn">
+              Download CV <i class="uil uil-file-alt"></i>
+            </button>
+          </div>
+          <div class="nav-menu-btn">
+            <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+          </div>
+        </nav>
+    </body>
+    <br></br>
+<body>
+      <!-- --------------- LANGKAH-LANGKAH MEMBUAT TABEL --------------- -->
+      <div class="steps">
+        <h2>Langkah-langkah Membuat Tabel</h2>
+        <ol>
+            <li>Buka file HTML dan buat struktur dasar seperti <code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, dan <code>&lt;body&gt;</code>.</li>
+            <li>Tambahkan elemen <code>&lt;table&gt;</code> untuk membuat tabel dan gunakan <code>&lt;thead&gt;</code> untuk membuat judul kolom.</li>
+            <li>Di dalam <code>&lt;thead&gt;</code>, tambahkan baris dengan elemen <code>&lt;tr&gt;</code>, dan setiap kolom dengan elemen <code>&lt;th&gt;</code>.</li>
+            <li>Gunakan elemen <code>&lt;tbody&gt;</code> untuk menambahkan isi tabel, dan tambahkan baris data dengan <code>&lt;tr&gt;</code> serta kolom dengan <code>&lt;td&gt;</code>.</li>
+            <li>Tambahkan CSS untuk mengatur tampilan tabel seperti warna latar belakang, warna teks, dan efek hover.</li>
+            <li>Untuk efek interaktif, tambahkan JavaScript jika diperlukan.</li>
+        </ol>
+    </div>
+</body>
+    <body>
+        <br></br>
+        <body>
+          <!-- Syntax untuk Membuat CSS -->
+          <h2>Syntax untuk CSS:</h2>
+          <pre>
+              <code>
+      :root {
+          --body-color: #201e43; /* Ungu pekat untuk latar belakang */
+          --color-white: #EEEEEE; /* Putih keabu-abuan yang lembut */
+          --text-color-second: #a591ce; /* Abu-abu terang untuk teks sekunder */
+          --first-color: #5a4bb7; /* Ungu tua tegas */
+          --first-color-hover: #443791; /* Ungu lebih tua untuk efek hover */
+          --text-black: #000000; /* Hitam untuk teks */
+      }
+      
+      body {
+          font-family: 'Poppins', sans-serif;
+          background-color: var(--body-color);
+          color: var(--text-color-second);
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          flex-direction: column;
+          height: auto;
+          margin: 0;
+          padding: 20px;
+      }
+      
+      /* Navigasi Bar */
+      .navbar {
+          width: 100%;
+          background-color: var(--first-color);
+          padding: 10px;
+          text-align: center;
+          margin-bottom: 20px;
+          border-radius: 5px;
+      }
+      
+      .navbar a {
+          color: var(--color-white);
+          text-decoration: none;
+          margin: 0 15px;
+          font-weight: 500;
+      }
+      
+      .navbar a:hover {
+          text-decoration: underline;
+      }
+      
+      table {
+          width: 100%;
+          max-width: 1500px; /* Maksimal lebar tabel */
+          border-collapse: collapse;
+          background-color: var(--color-white);
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+          margin-bottom: 40px; /* Jarak antara tabel */
+      }
+      
+      th, td {
+          border: 1px solid var(--first-color);
+          padding: 12px;
+          text-align: center;
+          transition: background-color 0.3s;
+      }
+      
+      th {
+          background-color: var(--first-color);
+          color: var(--color-white);
+      }
+      
+      tr:nth-child(even) {
+          background-color: #f2f2f2;
+      }
+      
+      tr:hover {
+          background-color: var(--first-color-hover);
+          color: var(--color-white);
+      }
+      
+      /* Mengubah warna teks tabel menjadi hitam */
+      td {
+          color: var(--text-black);
+      }
+      tr:hover td {
+          color: var(--color-white);
+      }
+      
+      h2 {
+          color: var(--text-color-second);
+          margin-bottom: 20px;
+          text-align: center;
+      }
+              </code>
+          </pre>
+      </body>
+      
+        <body>
+          <br />
+                   <!-- Syntax untuk Membuat Tabel -->
+                   <h2>Syntax untuk Membuat Tabel:</h2>
+                   <pre>
+               &lt;table&gt;
+                   &lt;thead&gt;
+                       &lt;tr&gt;
+                           &lt;th&gt;NIM&lt;/th&gt;
+                           &lt;th&gt;Nama&lt;/th&gt;
+                           &lt;th&gt;IPK Sem 1&lt;/th&gt;
+                           &lt;th&gt;IPK Sem 2&lt;/th&gt;
+                           &lt;th&gt;IPK Sem 3&lt;/th&gt;
+                           &lt;th&gt;IPK Sem 4&lt;/th&gt;
+                           &lt;th&gt;IPK Sem 5&lt;/th&gt;
+                           &lt;th&gt;IPK Sem 6&lt;/th&gt;
+                           &lt;th&gt;IPK Sem 7&lt;/th&gt;
+                           &lt;th&gt;IPK Sem 8&lt;/th&gt;
+                           &lt;th&gt;Jurusan&lt;/th&gt;
+                           &lt;th&gt;Fakultas&lt;/th&gt;
+                       &lt;/tr&gt;
+                   &lt;/thead&gt;
+                   &lt;tbody&gt;
+                       &lt;!-- Tambahkan baris data di sini --&gt;
+                       &lt;tr&gt;
+                           &lt;td colspan="12"&gt;Belum ada data yang tersedia&lt;/td&gt;
+                       &lt;/tr&gt;
+                   &lt;/tbody&gt;
+               &lt;/table&gt;
+                   </pre>
+          <h1>Berikut Adalah Contoh Hasilnya:</h1>
+          <!-- Contoh Tabel Kosong -->
+          <h2>Data Mahasiswa (Kosong)</h2>
+          <table>
+              <thead>
+                  <tr>
+                      <th>NIM</th>
+                      <th>Nama</th>
+                      <th>IPK Sem 1</th>
+                      <th>IPK Sem 2</th>
+                      <th>IPK Sem 3</th>
+                      <th>IPK Sem 4</th>
+                      <th>IPK Sem 5</th>
+                      <th>IPK Sem 6</th>
+                      <th>IPK Sem 7</th>
+                      <th>IPK Sem 8</th>
+                      <th>Jurusan</th>
+                      <th>Fakultas</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <!-- Tidak ada data yang dimasukkan -->
+                  <tr>
+                      <td colspan="12">Belum ada data yang tersedia</td>
+                  </tr>
+              </tbody>
+          </table>
+      
+          <br />
+      
+      </body>
+      
+        <h1>Berikut Adalah contoh Hasilnya ketika data di inputkan:</h1>
+    <h2>Data Mahasiswa</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>IPK Sem 1</th>
+                <th>IPK Sem 2</th>
+                <th>IPK Sem 3</th>
+                <th>IPK Sem 4</th>
+                <th>IPK Sem 5</th>
+                <th>IPK Sem 6</th>
+                <th>IPK Sem 7</th>
+                <th>IPK Sem 8</th>
+                <th>Jurusan</th>
+                <th>Fakultas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>123456</td>
+                <td>Ahmad</td>
+                <td>3.50</td>
+                <td>3.60</td>
+                <td>3.70</td>
+                <td>3.80</td>
+                <td>3.75</td>
+                <td>3.85</td>
+                <td>3.90</td>
+                <td>3.95</td>
+                <td>Teknik Informatika</td>
+                <td>Fakultas Teknik</td>
+            </tr>
+            <tr>
+                <td>234567</td>
+                <td>Siti</td>
+                <td>3.30</td>
+                <td>3.40</td>
+                <td>3.50</td>
+                <td>3.60</td>
+                <td>3.65</td>
+                <td>3.70</td>
+                <td>3.75</td>
+                <td>3.80</td>
+                <td>Akuntansi</td>
+                <td>Fakultas Ekonomi</td>
+            </tr>
+            <tr>
+                <td>345678</td>
+                <td>Rudi</td>
+                <td>3.20</td>
+                <td>3.30</td>
+                <td>3.40</td>
+                <td>3.50</td>
+                <td>3.55</td>
+                <td>3.60</td>
+                <td>3.65</td>
+                <td>3.70</td>
+                <td>Manajemen</td>
+                <td>Fakultas Ekonomi</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
