@@ -5,11 +5,11 @@
 :root {
   /* Background and Primary Colors */
   --body-color: #201e43; /* Hitam abu-abu pekat untuk latar belakang, memberikan kesan elegan dan profesional */
-  --color-white: #eeeeee; /* Putih keabu-abuan yang lembut untuk mengurangi kontras yang terlalu tajam */
+  --color-white: #e2e2e2; /* Putih keabu-abuan yang lembut untuk mengurangi kontras yang terlalu tajam */
 
   /* Text Colors */
-  --text-color-second: #a591ce; /* Abu-abu terang untuk teks sekunder, jelas namun tetap elegan */
-  --text-color-third: #3c789f; /* Biru tegas untuk heading atau elemen penting, memberikan kesan formal dan berwibawa */
+  --text-color-second: #686868; /* Abu-abu terang untuk teks sekunder, jelas namun tetap elegan */
+  --text-color-third: #32a6b3; /* Biru tegas untuk heading atau elemen penting, memberikan kesan formal dan berwibawa */
 
   /* Primary Button & Link Colors */
   --first-color: #5a4bb7; /* Ungu tua tegas, memberikan kesan yang profesional namun modern */
@@ -22,9 +22,9 @@
   /* Shadow and Hover Effects */
   --first-shadow-color: rgba(
     255,
-    255,
-    255,
-    0.1
+    153,
+    0,
+    0.993
   ); /* Shadow putih lembut untuk menambah kedalaman */
   --second-shadow-color: rgba(
     0,
@@ -32,6 +32,102 @@
     0,
     0.7
   ); /* Shadow hitam pekat untuk mempertegas elemen visual */
+}
+/* Kelas khusus untuk mengubah warna paragraf */
+.highlight-paragraph {
+  color: #fffefe; /* Ubah warna menjadi oranye atau sesuai keinginan */
+}
+/* Additional styles for tutorial text */
+.tutorial-box {
+  background-color: #d9d9d9; /* Light gray background for the tutorial box */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  margin: 20px 0; /* Margin between tutorial boxes */
+  padding: 50px; /* Padding inside the tutorial box */
+}
+
+/* Font styles */
+.tutorial-box h2 {
+  font-size: 24px; /* Larger font size for headings */
+  color: #333; /* Darker color for better contrast */
+  margin-bottom: 10px; /* Space below heading */
+}
+
+.tutorial-box p {
+  font-size: 16px; /* Font size for paragraphs */
+  line-height: 1.5; /* Spacing between lines */
+  color: #555; /* Slightly lighter color for text */
+}
+
+.tutorial-box h3 {
+  font-size: 18px; /* Font size for subheadings */
+  color: #444; /* Medium dark color for subheadings */
+  margin-top: 15px; /* Space above subheadings */
+  margin-bottom: 5px; /* Space below subheadings */
+}
+
+.editor {
+  width: 100%; /* Full width for the code editor */
+  height: 200px; /* Set a fixed height for the code editor */
+  padding: 10px; /* Padding inside the textarea */
+  border: 1px solid #aaa; /* Border around the textarea */
+  border-radius: 4px; /* Rounded corners for the textarea */
+  background-color: #1e1e1e; /* Dark background for the code editor */
+  color: #dcdcdc; /* Light gray text color for better contrast */
+  font-family: "Courier New", Courier, monospace; /* Monospace font for code */
+  resize: vertical; /* Allow vertical resizing only */
+}
+
+.preview {
+  margin-top: 10px; /* Space above the preview section */
+  padding: 10px; /* Padding inside the preview area */
+  border: 1px solid #aaa; /* Border around the preview area */
+  background-color: #d9d9d9; /* Light gray background for the preview */
+  color: #333; /* Text color for preview */
+}
+/* Style for the Run button */
+.run-button {
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for the button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth background change */
+  margin-top: 10px; /* Space above the button */
+}
+.undo-button {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.undo-button:hover {
+  background-color: #e0e0e0;
+  border-color: #999;
+  color: #000;
+}
+
+.undo-button:active {
+  background-color: #d0d0d0;
+  border-color: #666;
+  color: #333;
+}
+
+/* Hover effect for the Run button */
+.run-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Active effect for the Run button */
+.run-button:active {
+  background-color: #3e8e41; /* Even darker green when clicked */
 }
 
 /* ----- BASE ----- */
@@ -142,7 +238,6 @@ nav {
 }
 .nav-menu-btn {
   display: none;
-  color: #ffffff;
 }
 .nav-menu-btn i {
   font-size: 28px;
@@ -234,7 +329,7 @@ nav {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  box-shadow: 0px 2px 5px 0px rgba(251, 250, 250, 0.25);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
 .icon:hover {
@@ -302,6 +397,18 @@ nav {
 .col {
   display: flex;
   width: 50%;
+}
+/* Mengubah warna teks di dalam content-container menjadi putih */
+.content-container {
+  color: white; /* Mengatur warna teks menjadi putih */
+}
+
+/* Jika ada elemen lain di dalam container yang perlu diatur */
+.content-container h1,
+.content-container h2,
+.content-container h3,
+.content-container p {
+  color: white; /* Mengatur warna heading dan paragraf menjadi putih */
 }
 
 /* -- ## --- RESUABLE CSS -- ## -- */

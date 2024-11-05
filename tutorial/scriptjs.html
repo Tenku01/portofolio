@@ -1,0 +1,118 @@
+<!-- ----- MAIN JS ----- -->
+<script src="assets/js/main.js"></script>
+<script>
+  // Riwayat Kode
+  let inlineCodeHistory = [];
+  let selectorCodeHistory = [];
+  let marginsCodeHistory = [];
+  let contentCodeHistory = [];
+
+  // Fungsi untuk menjalankan kode konten
+  function runContentCode() {
+    const code = document.getElementById("contentCode").value;
+    document.getElementById("previewContent").innerHTML = code;
+    contentCodeHistory.push(code);
+  }
+
+  // Fungsi untuk mengundurkan konten
+  function undoContentCode() {
+    if (contentCodeHistory.length > 1) {
+      contentCodeHistory.pop(); // Hapus entri terakhir
+      const previousCode = contentCodeHistory[contentCodeHistory.length - 1];
+      document.getElementById("contentCode").value = previousCode;
+      document.getElementById("previewContent").innerHTML = previousCode; // Perbarui preview
+    } else {
+      document.getElementById("previewContent").innerHTML = ""; // Hapus hasil jika tidak ada riwayat
+      document.getElementById("contentCode").value = ""; // Hapus input juga
+    }
+  }
+
+  // Fungsi untuk menjalankan kode inline
+  function runInlineCode() {
+    const code = document.getElementById("inlineCode").value;
+    document.getElementById("previewInline").innerHTML = code;
+    inlineCodeHistory.push(code);
+  }
+
+  // Fungsi untuk mengundurkan kode inline
+  function undoInlineCode() {
+    if (inlineCodeHistory.length > 1) {
+      inlineCodeHistory.pop(); // Hapus entri terakhir
+      const previousCode = inlineCodeHistory[inlineCodeHistory.length - 1];
+      document.getElementById("inlineCode").value = previousCode;
+      document.getElementById("previewInline").innerHTML = previousCode; // Perbarui preview
+    } else {
+      document.getElementById("previewInline").innerHTML = ""; // Hapus hasil jika tidak ada riwayat
+    }
+  }
+
+  // Fungsi untuk menjalankan kode selector
+  function runSelectorCode() {
+    const code = document.getElementById("selectorCode").value;
+    const style = document.createElement("style");
+    style.innerHTML = code;
+
+    // Hapus style sebelumnya
+    const preview = document.getElementById("previewSelector");
+    if (preview.querySelector("style")) {
+      preview.querySelector("style").remove();
+    }
+
+    preview.appendChild(style);
+    selectorCodeHistory.push(code);
+  }
+
+  // Fungsi untuk mengundurkan kode selector
+  function undoSelectorCode() {
+    if (selectorCodeHistory.length > 1) {
+      selectorCodeHistory.pop(); // Hapus entri terakhir
+      const previousCode = selectorCodeHistory[selectorCodeHistory.length - 1];
+      document.getElementById("selectorCode").value = previousCode;
+
+      const preview = document.getElementById("previewSelector");
+      if (preview.querySelector("style")) {
+        preview.querySelector("style").innerHTML = previousCode; // Perbarui preview
+      }
+    } else {
+      const preview = document.getElementById("previewSelector");
+      if (preview.querySelector("style")) {
+        preview.querySelector("style").remove(); // Hapus style jika tidak ada riwayat
+      }
+    }
+  }
+
+  // Fungsi untuk menjalankan kode margin
+  function runMarginsCode() {
+    const code = document.getElementById("marginsCode").value;
+    const style = document.createElement("style");
+    style.innerHTML = code;
+
+    // Hapus style sebelumnya
+    const preview = document.getElementById("previewMargins");
+    if (preview.querySelector("style")) {
+      preview.querySelector("style").remove();
+    }
+
+    preview.appendChild(style);
+    marginsCodeHistory.push(code);
+  }
+
+  // Fungsi untuk mengundurkan kode margin
+  function undoMarginsCode() {
+    if (marginsCodeHistory.length > 1) {
+      marginsCodeHistory.pop(); // Hapus entri terakhir
+      const previousCode = marginsCodeHistory[marginsCodeHistory.length - 1];
+      document.getElementById("marginsCode").value = previousCode;
+
+      const preview = document.getElementById("previewMargins");
+      if (preview.querySelector("style")) {
+        preview.querySelector("style").innerHTML = previousCode; // Perbarui preview
+      }
+    } else {
+      const preview = document.getElementById("previewMargins");
+      if (preview.querySelector("style")) {
+        preview.querySelector("style").remove(); // Hapus style jika tidak ada riwayat
+      }
+    }
+  }
+</script>

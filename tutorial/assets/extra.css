@@ -1,0 +1,92 @@
+/* Additional styles for tutorial text */
+.tutorial-box {
+  background-color: #d9d9d9; /* Light gray background for the tutorial box */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  margin: 20px 0; /* Margin between tutorial boxes */
+  padding: 15px; /* Padding inside the tutorial box */
+}
+
+/* Font styles */
+.tutorial-box h2 {
+  font-size: 24px; /* Larger font size for headings */
+  color: #333; /* Darker color for better contrast */
+  margin-bottom: 10px; /* Space below heading */
+}
+
+.tutorial-box p {
+  font-size: 16px; /* Font size for paragraphs */
+  line-height: 1.5; /* Spacing between lines */
+  color: #555; /* Slightly lighter color for text */
+}
+
+.tutorial-box h3 {
+  font-size: 18px; /* Font size for subheadings */
+  color: #444; /* Medium dark color for subheadings */
+  margin-top: 15px; /* Space above subheadings */
+  margin-bottom: 5px; /* Space below subheadings */
+}
+
+.editor {
+  width: 100%; /* Full width for the code editor */
+  height: 200px; /* Set a fixed height for the code editor */
+  padding: 10px; /* Padding inside the textarea */
+  border: 1px solid #aaa; /* Border around the textarea */
+  border-radius: 4px; /* Rounded corners for the textarea */
+  background-color: #1e1e1e; /* Dark background for the code editor */
+  color: #dcdcdc; /* Light gray text color for better contrast */
+  font-family: "Courier New", Courier, monospace; /* Monospace font for code */
+  resize: vertical; /* Allow vertical resizing only */
+}
+
+.preview {
+  margin-top: 10px; /* Space above the preview section */
+  padding: 10px; /* Padding inside the preview area */
+  border: 1px solid #aaa; /* Border around the preview area */
+  background-color: #d9d9d9; /* Light gray background for the preview */
+  color: #333; /* Text color for preview */
+}
+/* Style for the Run button */
+.run-button {
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for the button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth background change */
+  margin-top: 10px; /* Space above the button */
+}
+.undo-button {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.undo-button:hover {
+  background-color: #e0e0e0;
+  border-color: #999;
+  color: #000;
+}
+
+.undo-button:active {
+  background-color: #d0d0d0;
+  border-color: #666;
+  color: #333;
+}
+
+/* Hover effect for the Run button */
+.run-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Active effect for the Run button */
+.run-button:active {
+  background-color: #3e8e41; /* Even darker green when clicked */
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- --------- UNICONS ---------- -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- --------- FAVICON ---------- -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"
+    />
+
+    <title>Code Zone</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Code Zone</p>
+          <span>.</span>
+        </div>
+        <div class="nav-menu-btn">
+          <i class="uil uil-bars"></i>
+        </div>
+      </nav>
+
+      <main class="wrapper">
+        <section class="section" id="codeZone">
+          <div class="tutorial-box">
+            <h2>Live HTML, CSS, and JavaScript Editor</h2>
+            <p>
+              Input your HTML, CSS, and JavaScript code below and see the result
+              instantly.
+            </p>
+
+            <!-- HTML Editor -->
+            <div class="code-editor">
+              <h3>HTML</h3>
+              <textarea
+                id="htmlCode1"
+                placeholder="Write your HTML here..."
+                rows="5"
+              ></textarea>
+            </div>
+
+            <!-- CSS Editor -->
+            <div class="code-editor">
+              <h3>CSS</h3>
+              <textarea
+                id="cssCode1"
+                placeholder="Write your CSS here..."
+                rows="5"
+              ></textarea>
+            </div>
+
+            <!-- JavaScript Editor -->
+            <div class="code-editor">
+              <h3>JavaScript</h3>
+              <textarea
+                id="jsCode1"
+                placeholder="Write your JavaScript here..."
+                rows="5"
+              ></textarea>
+            </div>
+
+            <button class="run-button" onclick="runCode('1')">Run Code</button>
+            <button class="undo-button" onclick="clearCode('1')">
+              Clear Code
+            </button>
+
+            <h3>Output:</h3>
+            <iframe
+              id="outputFrame1"
+              class="preview"
+              title="Code Output"
+            ></iframe>
+          </div>
+        </section>
+      </main>
+
+    
+      <footer>
+        <div class="bottom-footer">
+          <p>&copy; Herm - All rights reserved</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+      function runCode(editorId) {
+        // Get values from HTML, CSS, and JS text areas for each editor
+        const htmlCode = document.getElementById("htmlCode" + editorId).value;
+        const cssCode = `<style>${
+          document.getElementById("cssCode" + editorId).value
+        }</style>`;
+        const jsCode = `<script>${
+          document.getElementById("jsCode" + editorId).value
+        }<\/script>`;
+
+        // Create a complete HTML content with CSS and JS
+        const outputContent = `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          ${cssCode}
+        </head>
+        <body>
+          ${htmlCode}
+          ${jsCode}
+        </body>
+        </html>
+      `;
+
+        // Update iframe content with the new HTML, CSS, and JS code
+        const iframe = document.getElementById("outputFrame" + editorId)
+          .contentWindow.document;
+        iframe.open();
+        iframe.write(outputContent);
+        iframe.close();
+      }
+
+      function clearCode(editorId) {
+        // Clear the HTML, CSS, and JavaScript input areas and output frame for each editor
+        document.getElementById("htmlCode" + editorId).value = "";
+        document.getElementById("cssCode" + editorId).value = "";
+        document.getElementById("jsCode" + editorId).value = "";
+        document.getElementById(
+          "outputFrame" + editorId
+        ).contentWindow.document.body.innerHTML = "";
+      }
+    </script>
+  </body>
+</html>

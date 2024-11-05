@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- --------- UNICONS ---------- -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- --------- FAVICON ---------- -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <style>
+      :root {
+          --body-color: #201e43; /* Ungu pekat untuk latar belakang */
+          --color-white: #EEEEEE; /* Putih keabu-abuan yang lembut */
+          --text-color-second: #a591ce; /* Abu-abu terang untuk teks sekunder */
+          --first-color: #5a4bb7; /* Ungu tua tegas */
+          --first-color-hover: #443791; /* Ungu lebih tua untuk efek hover */
+          --text-black: #000000; /* Hitam untuk teks */
+      }
+
+      body {
+          font-family: 'Poppins', sans-serif;
+          background-color: var(--body-color);
+          color: var(--text-color-second);
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          flex-direction: column;
+          height: auto;
+          margin: 0;
+          padding: 20px;
+      }
+
+      /* Navigasi Bar */
+      .navbar {
+          width: 100%;
+          background-color: var(--first-color);
+          padding: 10px;
+          text-align: center;
+          margin-bottom: 20px;
+          border-radius: 5px;
+      }
+
+      .navbar a {
+          color: var(--color-white);
+          text-decoration: none;
+          margin: 0 15px;
+          font-weight: 500;
+      }
+
+      .navbar a:hover {
+          text-decoration: underline;
+      }
+.scroll-container {
+  max-height: 300px; /* Batas tinggi kontainer */
+  overflow-y: auto; /* Menambahkan scrollbar vertikal */
+  background-color:#3c789f; /* Warna latar belakang */
+  padding: 100px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); /* Efek bayangan */
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #3c789f; /* Warna garis luar */
+  color:#ffff;
+}
+
+/* Styling untuk heading di dalam kontainer */
+.scroll-container h2 {
+  color: #ffff;
+  font-size: 1.5em;
+  margin-top: 0;
+}
+
+/* Styling untuk kode yang ada di dalam kontainer */
+.scroll-container code, .scroll-container pre {
+  background-color: #ffff;
+  padding: 10px;
+  border-radius: 5px;
+  display: block;
+  overflow-x: auto;
+  margin: 10px 0;
+  font-size: 0.9em;
+  color: #5a4bb7;
+}
+
+
+      table {
+          width: 100%;
+          max-width: 1500px; /* Maksimal lebar tabel */
+          border-collapse: collapse;
+          background-color: var(--color-white);
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+          margin-bottom: 40px; /* Jarak antara tabel */
+      }
+
+      th, td {
+          border: 1px solid var(--first-color);
+          padding: 12px;
+          text-align: center;
+          transition: background-color 0.3s;
+      }
+
+      th {
+          background-color: var(--first-color);
+          color: var(--color-white);
+      }
+
+      tr:nth-child(even) {
+          background-color: #f2f2f2;
+      }
+
+      tr:hover {
+          background-color: var(--first-color-hover);
+          color: var(--color-white);
+      }
+
+      /* Mengubah warna teks tabel menjadi hitam */
+      td {
+          color: var(--text-black);
+      }
+      tr:hover td {
+          color: var(--color-white);
+      }
+
+      h2 {
+          color: var(--text-color-second);
+          margin-bottom: 20px;
+          text-align: center;
+      }
+  </style>
+
+    <title>Tutorial CSS</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Tutorial CSS Basic</p>
+          <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+          <ul class="nav_menu_list">
+            <li class="nav_list">
+              <a href="index.html" class="nav-link active-link">Home</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="table.html" class="nav-link">Tabel</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="form.html" class="nav-link">Form</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="tutorial.html" class="nav-link">Tutorial</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="#contact" class="nav-link">Contact</a>
+              <div class="circle"></div>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-button">
+          <button class="btn">
+            Download CV <i class="uil uil-file-alt"></i>
+          </button>
+        </div>
+        <div class="nav-menu-btn">
+          <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+<br><br><br>
+      <!-- -------------- MAIN ---------------- -->
+          <div class="tutorial-box">
+            <h2>Latihan Membuat Form</h2>
+            <p>Latihan untuk membuat Form dalam html</p>
+
+            <h3>HTML & CSS Code:</h3>
+            <textarea
+              class="editor"
+              rows="20"
+              id="contentCode"
+              placeholder="Masukkan kode HTML dan CSS di sini"
+            >
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            
+                <!-- --------- UNICONS ---------- -->
+                <link
+                  rel="stylesheet"
+                  href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+                />
+            
+                <!-- --------- CSS ---------- -->
+                <link rel="stylesheet" href="../assets/css/styletutorial.css" />
+            
+                <!-- --------- FAVICON ---------- -->
+                <link
+                  rel="shortcut icon"
+                  href="assets/images/favicon.png"
+                  type="image/x-icon"
+                />
+                <style>
+                    :root {
+                        --body-color: #201e43; /* Ungu pekat untuk latar belakang */
+                        --color-white: #EEEEEE; /* Putih keabu-abuan yang lembut */
+                        --text-color-second: #a591ce; /* Abu-abu terang untuk teks sekunder */
+                        --first-color: #5a4bb7; /* Ungu tua tegas */
+                        --first-color-hover: #443791; /* Ungu lebih tua untuk efek hover */
+                        --text-black: #000000; /* Hitam untuk teks */
+                    }
+            
+                    body {
+                        font-family: 'Poppins', sans-serif;
+                        background-color: var(--body-color);
+                        color: var(--text-color-second);
+                        display: flex;
+                        justify-content: center;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        height: auto;
+                        margin: 0;
+                        padding: 20px;
+                    }
+            
+                    /* Navigasi Bar */
+                    .navbar {
+                        width: 100%;
+                        background-color: var(--first-color);
+                        padding: 10px;
+                        text-align: center;
+                        margin-bottom: 20px;
+                        border-radius: 5px;
+                    }
+            
+                    .navbar a {
+                        color: var(--color-white);
+                        text-decoration: none;
+                        margin: 0 15px;
+                        font-weight: 500;
+                    }
+            
+                    .navbar a:hover {
+                        text-decoration: underline;
+                    }
+                    
+                    /* Kontainer Scroll */
+                    .scroll-container {
+                        max-height: 300px; /* Batas tinggi kontainer */
+                        overflow-y: auto; /* Menambahkan scrollbar vertikal */
+                        background-color: var(--color-white); /* Warna latar belakang */
+                        padding: 20px;
+                        border-radius: 15px;
+                        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); /* Efek bayangan */
+                        margin-bottom: 20px;
+                        width: 100%;
+                        border: 1px solid #ddd; /* Warna garis luar */
+                    }
+            
+                    /* Background hitam untuk elemen kode */
+                    .scroll-container code, .scroll-container pre {
+                        background-color: #000000; /* Background hitam untuk kode */
+                        color: #ffffff; /* Warna teks putih untuk kontras */
+                        padding: 10px;
+                        border-radius: 5px;
+                        margin-bottom: 10px;
+                        display: inline-block;
+                    }
+            
+                    table {
+                        width: 100%;
+                        max-width: 1500px; /* Maksimal lebar tabel */
+                        border-collapse: collapse;
+                        background-color: var(--color-white);
+                        border-radius: 10px;
+                        overflow: hidden;
+                        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                        margin-bottom: 40px; /* Jarak antara tabel */
+                    }
+            
+                    th, td {
+                        border: 1px solid var(--first-color);
+                        padding: 12px;
+                        text-align: center;
+                        transition: background-color 0.3s;
+                    }
+            
+                    th {
+                        background-color: var(--first-color);
+                        color: var(--color-white);
+                    }
+            
+                    tr:nth-child(even) {
+                        background-color: #f2f2f2;
+                    }
+            
+                    tr:hover {
+                        background-color: var(--first-color-hover);
+                        color: var(--color-white);
+                    }
+            
+                    /* Mengubah warna teks tabel menjadi hitam */
+                    td {
+                        color: var(--text-black);
+                    }
+                    tr:hover td {
+                        color: var(--color-white);
+                    }
+            
+                    h2 {
+                        color: var(--text-color-second);
+                        margin-bottom: 20px;
+                        text-align: center;
+                    }
+                </style>
+                <title>Tutorial Membuat Tabel</title>
+            </head>
+            <body>
+                <h2>Data Mahasiswa (Kosong)</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NIM</th>
+                            <th>Nama</th>
+                            <th>IPK Sem 1</th>
+                            <th>IPK Sem 2</th>
+                            <th>IPK Sem 3</th>
+                            <th>IPK Sem 4</th>
+                            <th>IPK Sem 5</th>
+                            <th>IPK Sem 6</th>
+                            <th>IPK Sem 7</th>
+                            <th>IPK Sem 8</th>
+                            <th>Jurusan</th>
+                            <th>Fakultas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Tidak ada data yang dimasukkan -->
+                        <tr>
+                            <td colspan="12">Belum ada data yang tersedia</td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+                <h2>Data Mahasiswa</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NIM</th>
+                            <th>Nama</th>
+                            <th>IPK Sem 1</th>
+                            <th>IPK Sem 2</th>
+                            <th>IPK Sem 3</th>
+                            <th>IPK Sem 4</th>
+                            <th>IPK Sem 5</th>
+                            <th>IPK Sem 6</th>
+                            <th>IPK Sem 7</th>
+                            <th>IPK Sem 8</th>
+                            <th>Jurusan</th>
+                            <th>Fakultas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>123456</td>
+                            <td>Ahmad</td>
+                            <td>3.50</td>
+                            <td>3.60</td>
+                            <td>3.70</td>
+                            <td>3.80</td>
+                            <td>3.75</td>
+                            <td>3.85</td>
+                            <td>3.90</td>
+                            <td>3.95</td>
+                            <td>Teknik Informatika</td>
+                            <td>Fakultas Teknik</td>
+                        </tr>
+                        <tr>
+                            <td>234567</td>
+                            <td>Siti</td>
+                            <td>3.30</td>
+                            <td>3.40</td>
+                            <td>3.50</td>
+                            <td>3.60</td>
+                            <td>3.65</td>
+                            <td>3.70</td>
+                            <td>3.75</td>
+                            <td>3.80</td>
+                            <td>Akuntansi</td>
+                            <td>Fakultas Ekonomi</td>
+                        </tr>
+                        <tr>
+                            <td>345678</td>
+                            <td>Rudi</td>
+                            <td>3.20</td>
+                            <td>3.30</td>
+                            <td>3.40</td>
+                            <td>3.50</td>
+                            <td>3.55</td>
+                            <td>3.60</td>
+                            <td>3.65</td>
+                            <td>3.70</td>
+                            <td>Manajemen</td>
+                            <td>Fakultas Ekonomi</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </body>
+            </html>
+            
+            
+          </textarea
+            >
+
+            <button class="run-button" onclick="runContentCode()">Run</button>
+            <button class="undo-button" onclick="undoContentCode()">
+              Undo
+            </button>
+
+            <h3>Hasil:</h3>
+            <div class="preview" id="previewContent"></div>
+          </div>
+        </section>
+      </main>
+
+    
+
+    <!-- ----- MAIN JS ----- -->
+    <script>
+      // Riwayat Kode
+      let contentCodeHistory = [];
+      // Fungsi untuk menjalankan kode konten
+      function runContentCode() {
+        const code = document.getElementById("contentCode").value;
+        document.getElementById("previewContent").innerHTML = code;
+        contentCodeHistory.push(code);
+      }
+
+      // Fungsi untuk mengembalikan kode sebelumnya
+      function undoContentCode() {
+        if (contentCodeHistory.length > 1) {
+          contentCodeHistory.pop(); // Hapus entri terakhir
+          const previousCode =
+            contentCodeHistory[contentCodeHistory.length - 1];
+          document.getElementById("contentCode").value = previousCode;
+          document.getElementById("previewContent").innerHTML = previousCode; // Perbarui preview
+        } else {
+          document.getElementById("previewContent").innerHTML = ""; // Hapus hasil jika tidak ada riwayat
+          document.getElementById("contentCode").value = ""; // Hapus input juga
+        }
+      }
+    </script>
+  </body>
+  <body>
+    <h1>Berikut Adalah Contoh Hasilnya:</h1>
+    <!-- Contoh Tabel Kosong -->
+    <h2>Data Mahasiswa (Kosong)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>IPK Sem 1</th>
+                <th>IPK Sem 2</th>
+                <th>IPK Sem 3</th>
+                <th>IPK Sem 4</th>
+                <th>IPK Sem 5</th>
+                <th>IPK Sem 6</th>
+                <th>IPK Sem 7</th>
+                <th>IPK Sem 8</th>
+                <th>Jurusan</th>
+                <th>Fakultas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Tidak ada data yang dimasukkan -->
+            <tr>
+                <td colspan="12">Belum ada data yang tersedia</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br />
+
+</body>
+
+  <h1>Berikut Adalah contoh Hasilnya ketika data di inputkan:</h1>
+<h2>Data Mahasiswa</h2>
+<table>
+  <thead>
+      <tr>
+          <th>NIM</th>
+          <th>Nama</th>
+          <th>IPK Sem 1</th>
+          <th>IPK Sem 2</th>
+          <th>IPK Sem 3</th>
+          <th>IPK Sem 4</th>
+          <th>IPK Sem 5</th>
+          <th>IPK Sem 6</th>
+          <th>IPK Sem 7</th>
+          <th>IPK Sem 8</th>
+          <th>Jurusan</th>
+          <th>Fakultas</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>123456</td>
+          <td>Ahmad</td>
+          <td>3.50</td>
+          <td>3.60</td>
+          <td>3.70</td>
+          <td>3.80</td>
+          <td>3.75</td>
+          <td>3.85</td>
+          <td>3.90</td>
+          <td>3.95</td>
+          <td>Teknik Informatika</td>
+          <td>Fakultas Teknik</td>
+      </tr>
+      <tr>
+          <td>234567</td>
+          <td>Siti</td>
+          <td>3.30</td>
+          <td>3.40</td>
+          <td>3.50</td>
+          <td>3.60</td>
+          <td>3.65</td>
+          <td>3.70</td>
+          <td>3.75</td>
+          <td>3.80</td>
+          <td>Akuntansi</td>
+          <td>Fakultas Ekonomi</td>
+      </tr>
+      <tr>
+          <td>345678</td>
+          <td>Rudi</td>
+          <td>3.20</td>
+          <td>3.30</td>
+          <td>3.40</td>
+          <td>3.50</td>
+          <td>3.55</td>
+          <td>3.60</td>
+          <td>3.65</td>
+          <td>3.70</td>
+          <td>Manajemen</td>
+          <td>Fakultas Ekonomi</td>
+      </tr>
+  </tbody>
+</table>
+  </body>
+    <!-- --------------- FOOTER --------------- -->
+    <footer>
+      <div class="top-footer"></div>
+      <div class="middle-footer">
+        <ul class="footer-menu">
+          <li class="footer_menu_list"><a href="#home">Home</a></li>
+          <li class="footer_menu_list"><a href="#about">About</a></li>
+          <li class="footer_menu_list"><a href="#projects">Projects</a></li>
+          <li class="footer_menu_list"><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social-icons">
+        <div class="icon"><i class="uil uil-instagram"></i></div>
+        <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
+        <div class="icon"><i class="uil uil-dribbble"></i></div>
+        <div class="icon"><i class="uil uil-github-alt"></i></div>
+      </div>
+      <div class="bottom-footer">
+        <p>
+          Copyright &copy;
+          <a href="#home" style="text-decoration: none">Herm</a> - All
+          rights reserved
+        </p>
+      </div>
+    </footer>
+  </div>
+</html>

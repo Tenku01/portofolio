@@ -1,0 +1,125 @@
+<main class="wrapper">
+  <section class="section" id="tutorials">
+    <div class="top-header">
+      <h1>Tutorial: CSS Basics</h1>
+    </div>
+
+    <!-- Tutorial: Inline CSS -->
+    <div class="tutorial-box">
+      <h2>1. Inline CSS</h2>
+      <p>
+        Inline CSS is used to apply a unique style to a single HTML element.
+      </p>
+      <h3>Code:</h3>
+      <textarea
+        class="editor"
+        rows="3"
+        id="inlineCode"
+        placeholder="&lt;h1 style='color: blue; text-align: center;'&gt;Hello World!&lt;/h1&gt;"
+      >
+<h1 style='color: blue; text-align: center;'>Hello World!</h1>
+                </textarea
+      >
+      <button class="run-button" onclick="runInlineCode()">Run</button>
+      <button class="undo-button" onclick="undoInlineCode()">Undo</button>
+      <h3>Hasil:</h3>
+      <div class="preview" id="previewInline"></div>
+    </div>
+
+    <!-- Tutorial: CSS Selectors -->
+    <div class="tutorial-box">
+      <h2>2. CSS Selectors</h2>
+      <p>
+        CSS selectors are used to select HTML elements and apply styles to them.
+        Here is an example of using selectors in CSS.
+      </p>
+      <h3>Code:</h3>
+      <textarea
+        class="editor"
+        rows="3"
+        id="selectorCode"
+        placeholder="h1 { color: green; background-color: orange; }"
+      >
+h1 { color: green; background-color: orange; }
+                </textarea
+      >
+      <button class="run-button" onclick="runSelectorCode()">Run</button>
+      <button class="undo-button" onclick="undoSelectorCode()">Undo</button>
+      <h3>Hasil:</h3>
+      <div class="preview" id="previewSelector">
+        <h1>Sample Heading</h1>
+        <p>Sample paragraph text to demonstrate the CSS selector effect.</p>
+      </div>
+    </div>
+
+    <!-- Tutorial: Comments in CSS -->
+    <div class="tutorial-box">
+      <h2>3. Comments in CSS</h2>
+      <p>Use comments to explain your code:</p>
+      <h3>Code:</h3>
+      <textarea
+        class="editor"
+        rows="3"
+        id="commentsCode"
+        placeholder="/* This is a comment */"
+      >
+/* This is a comment */
+                </textarea
+      >
+      <button class="run-button" onclick="runCommentsCode()">Run</button>
+      <button class="undo-button" onclick="undoCommentsCode()">Undo</button>
+      <h3>Hasil:</h3>
+      <div>
+        This example has no visible result as comments are ignored by the
+        browser.
+      </div>
+    </div>
+
+    <!-- Tutorial: Page Margins and Indents -->
+    <div class="tutorial-box">
+      <h2>4. Page Margins and Indents</h2>
+      <p>Example of setting page margins and indents:</p>
+      <h3>Code:</h3>
+      <textarea
+        class="editor"
+        rows="3"
+        id="marginsCode"
+        placeholder="body { margin: 0; padding: 0; } h1 { text-indent: 20px; }"
+      >
+body { margin: 0; padding: 0; }
+h1 { text-indent: 20px; }
+                </textarea
+      >
+      <button class="run-button" onclick="runMarginsCode()">Run</button>
+      <button class="undo-button" onclick="undoMarginsCode()">Undo</button>
+      <h3>Hasil:</h3>
+      <div id="previewMargins" style="margin: 20px; padding: 20px"></div>
+    </div>
+    <!-- Tutorial: CSS untuk Heading dan Paragraf -->
+    <div class="tutorial-box">
+      <h2>Pengaturan Heading dan Paragraf dengan CSS</h2>
+      <p>
+        Dalam tutorial ini, kita akan menggunakan CSS untuk mengatur elemen
+        heading dan paragraf agar terlihat lebih baik dan teratur.
+      </p>
+
+      <h3>Code:</h3>
+      <textarea
+        class="editor"
+        rows="10"
+        id="contentCode"
+        placeholder="&lt;h1 style='color: blue; margin: 20px;'&gt;Selamat Datang!&lt;/h1&gt;&lt;p style='color: green; margin: 10px; padding: 10px; border: 1px solid black;'&gt;Ini adalah paragraf pertama.&lt;/p&gt;&lt;p style='color: green; margin: 10px; padding: 10px; border: 1px solid black;'&gt;Ini adalah paragraf kedua.&lt;/p&gt;"
+      >
+      <h1 style='color: blue; margin: 20px;'>Selamat Datang!</h1>
+      <p style='color: green; margin: 10px; padding: 10px; border: 1px solid black;'>Ini adalah paragraf pertama.</p>
+      <p style='color: green; margin: 10px; padding: 10px; border: 1px solid black;'>Ini adalah paragraf kedua.</p>
+        </textarea
+      >
+      <button class="run-button" onclick="runContentCode()">Run</button>
+      <button class="undo-button" onclick="undoContentCode()">Undo</button>
+
+      <h3>Hasil:</h3>
+      <div class="preview" id="previewContent"></div>
+    </div>
+  </section>
+</main>
