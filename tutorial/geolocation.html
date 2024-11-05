@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- --------- UNICONS ---------- -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- --------- FAVICON ---------- -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <style>
+    footer {
+    background-color: #ffffff;
+    color: var(--text-color-white);
+    padding: 20px;
+    text-align: center;
+    width: 100%; /* Memastikan footer selebar halaman */
+}
+  </style>
+    <title>Tutorial CSS</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Tutorial CSS Basic</p>
+          <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+          <ul class="nav_menu_list">
+            <li class="nav_list">
+              <a href="tutorial.html" class="nav-link ">Home</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="table.html" class="nav-link">Tabel</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="form.html" class="nav-link ">Form</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="tutorial.html" class="nav-link active-link">API GeoLocation</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="#contact" class="nav-link">Canvas</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="#contact" class="nav-link">Deploy</a>
+              <div class="circle"></div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- -------------- MAIN ---------------- -->
+      <main class="wrapper">
+        <section class="section" id="tutorials">
+          <div class="tutorial-box">
+            <h2>Latihan Membuat Form</h2>
+            <p>Latihan untuk membuat Form dalam html</p>
+
+            <h3>HTML & CSS Code:</h3>
+            <textarea
+              class="editor"
+              rows="20"
+              id="contentCode"
+              placeholder="Masukkan kode HTML dan CSS di sini"
+            >
+            <!DOCTYPE html>
+            <html lang="en">
+              <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Geolocation API</title>
+                <style>
+                  /* Body styling */
+                  body {
+                    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #f0f4f8;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                  }
+            
+                  /* Container for content */
+                  .container {
+                    text-align: center;
+                    background-color: #ffffff;
+                    border-radius: 15px;
+                    padding: 40px;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                    max-width: 500px;
+                    width: 100%;
+                  }
+            
+                  h1 {
+                    font-size: 24px;
+                    color: #333;
+                    margin-bottom: 20px;
+                  }
+            
+                  /* Stylish button */
+                  button {
+                    background-color: #007bff;
+                    color: #fff;
+                    border: none;
+                    padding: 15px 30px;
+                    border-radius: 25px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                  }
+            
+                  button:hover {
+                    background-color: #0056b3;
+                  }
+            
+                  /* Location result box */
+                  #location {
+                    margin-top: 20px;
+                    padding: 20px;
+                    border-radius: 15px;
+                    background-color: #e9f7f9;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+                    display: none;
+                  }
+            
+                  h3 {
+                    margin-bottom: 10px;
+                    font-size: 20px;
+                    color: #007bff;
+                  }
+            
+                  p {
+                    font-size: 16px;
+                    color: #555;
+                    margin: 5px 0;
+                  }
+                </style>
+              </head>
+              <body>
+                <div class="container">
+                  <h1>Get User Location with Geolocation API</h1>
+                  <button onclick="getLocation()">Get Location</button>
+            
+                  <div id="location">
+                    <h3>Your Location:</h3>
+                    <p>Latitude: <span id="latitude"></span></p>
+                    <p>Longitude: <span id="longitude"></span></p>
+                    <p>Accuracy: <span id="accuracy"></span> meters</p>
+                  </div>
+                </div>
+            
+                <script>
+                  // Function to get user location
+                  function getLocation() {
+                    const locationBox = document.getElementById("location");
+                    if (navigator.geolocation) {
+                      navigator.geolocation.getCurrentPosition(showPosition, showError);
+                    } else {
+                      alert("Geolocation is not supported by this browser.");
+                    }
+            
+                    // Add loading effect to the button
+                    const button = document.querySelector("button");
+                    button.innerHTML = "Getting Location...";
+                    button.disabled = true;
+                    button.style.backgroundColor = "#ccc";
+                  }
+            
+                  // Function to display position
+                  function showPosition(position) {
+                    document.getElementById("latitude").innerHTML =
+                      position.coords.latitude;
+                    document.getElementById("longitude").innerHTML =
+                      position.coords.longitude;
+                    document.getElementById("accuracy").innerHTML =
+                      position.coords.accuracy + " meters";
+            
+                    // Show the location div
+                    const locationBox = document.getElementById("location");
+                    locationBox.style.display = "block";
+            
+                    // Revert button state
+                    const button = document.querySelector("button");
+                    button.innerHTML = "Get Location";
+                    button.disabled = false;
+                    button.style.backgroundColor = "#007bff";
+                  }
+            
+                  // Function to handle errors
+                  function showError(error) {
+                    switch (error.code) {
+                      case error.PERMISSION_DENIED:
+                        alert("User denied the request for Geolocation.");
+                        break;
+                      case error.POSITION_UNAVAILABLE:
+                        alert("Location information is unavailable.");
+                        break;
+                      case error.TIMEOUT:
+                        alert("The request to get user location timed out.");
+                        break;
+                      case error.UNKNOWN_ERROR:
+                        alert("An unknown error occurred.");
+                        break;
+                    }
+            
+                    // Revert button state even in case of an error
+                    const button = document.querySelector("button");
+                    button.innerHTML = "Get Location";
+                    button.disabled = false;
+                    button.style.backgroundColor = "#007bff";
+                  }
+                </script>
+              </body>
+            </html>
+            
+          </textarea>
+            <button class="run-button" onclick="runContentCode()">Run</button>
+            <button class="undo-button" onclick="undoContentCode()">
+              Undo
+            </button>
+
+            <h3>Hasil:</h3>
+            <div class="preview" id="previewContent"></div>
+          </div>
+        </section>
+      </main>
+    <!-- ----- MAIN JS ----- -->
+    <script>
+      // Riwayat Kode
+      let contentCodeHistory = [];
+      // Fungsi untuk menjalankan kode konten
+      function runContentCode() {
+        const code = document.getElementById("contentCode").value;
+        document.getElementById("previewContent").innerHTML = code;
+        contentCodeHistory.push(code);
+      }
+
+      // Fungsi untuk mengembalikan kode sebelumnya
+      function undoContentCode() {
+        if (contentCodeHistory.length > 1) {
+          contentCodeHistory.pop(); // Hapus entri terakhir
+          const previousCode =
+            contentCodeHistory[contentCodeHistory.length - 1];
+          document.getElementById("contentCode").value = previousCode;
+          document.getElementById("previewContent").innerHTML = previousCode; // Perbarui preview
+        } else {
+          document.getElementById("previewContent").innerHTML = ""; // Hapus hasil jika tidak ada riwayat
+          document.getElementById("contentCode").value = ""; // Hapus input juga
+        }
+      }
+    </script>
+  <style>
+    /* Styling khusus hanya untuk bagian Geolocation */
+    .geolocation-container {
+      text-align: center;
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin: 20px auto;
+    }
+
+    .geolocation-container h1 {
+      font-size: 24px;
+      color: #5a4bb7; /* Ungu tua */
+      margin-bottom: 20px;
+    }
+
+    .geolocation-container button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .geolocation-container button:hover {
+      background-color: #0056b3;
+    }
+
+    .geolocation-container #location {
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #e9f7f9;
+      display: none;
+    }
+
+    .geolocation-container h3 {
+      font-size: 20px;
+      color: #007bff;
+    }
+
+    .geolocation-container p {
+      font-size: 16px;
+      color: #555;
+    }
+  </style>
+ <h3 style="text-align: center;">DI BAWAH INI ADALAH CONTOHNYA</h3>
+   <!-- Bagian untuk menampilkan hasil Geolocation -->
+  <div class="geolocation-container">
+    <h1>Get User Location with Geolocation API</h1>
+    <button onclick="getLocation()">Get Location</button>
+
+    <div id="location">
+      <h3>Your Location:</h3>
+      <p>Latitude: <span id="latitude"></span></p>
+      <p>Longitude: <span id="longitude"></span></p>
+      <p>Accuracy: <span id="accuracy"></span> meters</p>
+    </div>
+  </div>
+
+  <script>
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+
+    function showPosition(position) {
+      document.getElementById("latitude").innerHTML = position.coords.latitude;
+      document.getElementById("longitude").innerHTML = position.coords.longitude;
+      document.getElementById("accuracy").innerHTML = position.coords.accuracy + " meters";
+      document.getElementById("location").style.display = "block";
+    }
+
+    function showError(error) {
+      alert("Unable to retrieve location.");
+    }
+  </script>
+    <!-- --------------- FOOTER --------------- -->
+    <footer>
+      <div class="top-footer"></div>
+      <div class="middle-footer">
+        <ul class="footer-menu">
+          <li class="footer_menu_list"><a href="#home">Home</a></li>
+          <li class="footer_menu_list"><a href="#about">About</a></li>
+          <li class="footer_menu_list"><a href="#projects">Projects</a></li>
+          <li class="footer_menu_list"><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social-icons">
+        <div class="icon"><i class="uil uil-instagram"></i></div>
+        <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
+        <div class="icon"><i class="uil uil-dribbble"></i></div>
+        <div class="icon"><i class="uil uil-github-alt"></i></div>
+      </div>
+      <div class="bottom-footer">
+        <p>
+          Copyright &copy;
+          <a href="#home" style="text-decoration: none">Herm</a> - All
+          rights reserved
+        </p>
+      </div>
+    </footer>
+  </div>
+   <!-- ----- MAIN JS ----- -->
+   <script src="../assets/js/main.js"></script>
+  </body>
+</html>
