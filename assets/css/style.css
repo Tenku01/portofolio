@@ -383,6 +383,7 @@ h3 {
   flex-wrap: wrap;
 }
 .project-box {
+  margin-top: 20px;
   position: relative;
   display: flex;
   justify-content: center;

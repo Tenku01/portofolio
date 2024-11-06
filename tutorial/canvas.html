@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- --------- UNICONS ---------- -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="../assets/css/styletutorial.css" />
+
+    <!-- --------- FAVICON ---------- -->
+    <link
+      rel="shortcut icon"
+      href="../assets/images/favicon.png"
+      type="image/x-icon"
+    />
+
+    <title>Tutorial Canvas</title>
+    <style>
+      /* CSS tambahan */
+      .run-button {
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for the button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth background change */
+  margin-top: 10px; /* Space above the button */
+}
+      .wrapper-syntax {
+        background-color: #f0f4f8;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px auto;
+        max-width: 800px;
+        overflow-x: auto;
+      }
+
+      .wrapper-canvas {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px auto;
+        max-width: 800px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      pre {
+        font-family: 'Courier New', Courier, monospace;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+
+      canvas {
+        display: block;
+        margin: 20px auto;
+        border: 1px solid #d3d3d3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Tutorial</p>
+          <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+            <ul class="nav_menu_list">
+                <li class="nav_list">
+                  <a href="tutorial.html" class="nav-link ">Menu Tutorial</a>
+                  <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                  <a href="table.html" class="nav-link">Tabel</a>
+                  <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                  <a href="form.html" class="nav-link">Form</a>
+                  <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                  <a href="geolocation.html" class="nav-link">API GeoLocation</a>
+                  <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                  <a href="canvas.html" class="nav-link active-link">Canvas</a>
+                  <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                  <a href="deploy.html" class="nav-link">Deploy</a>
+                  <div class="circle"></div>
+                </li>
+              </ul>
+        </div>
+        <div class="nav-button">
+          <button class="btn">
+            Download CV <i class="uil uil-file-alt"></i>
+          </button>
+        </div>
+        <div class="nav-menu-btn">
+          <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+<br><br><br><br>
+      <!-- Wrapper 1: Untuk Syntax -->
+   <!-- Wrapper 1: Syntax tutorial -->
+<div class="wrapper-syntax ">
+    <h2>Contoh Kode HTML untuk Canvas</h2>
+    <pre>
+      &lt;div class="wrapper-canvas"&gt;
+          &lt;h2&gt;Tutorial Canvas pada HTML&lt;/h2&gt;
+          &lt;p&gt;Pilih gambar:&lt;/p&gt;
+          &lt;img id="gambar" src="../assets/images/pp.jpg" alt="Gambar contoh" width="220" height="277" /&gt;
+          &lt;p&gt;Mengisi gambar ke dalam canvas:&lt;/p&gt;
+          &lt;canvas id="kanvas" width="220" height="277"&gt;
+            Your browser does not support the HTML5 canvas tag.
+          &lt;/canvas&gt;
+          &lt;p&gt;&lt;button onclick="kanvas()"&gt;Coba&lt;/button&gt;&lt;/p&gt;
+      &lt;/div&gt;
+  
+      &lt;!-- ----- SCRIPT ----- --&gt;
+      &lt;script&gt;
+        function kanvas() {
+          var c = document.getElementById("kanvas");
+          var ctx = c.getContext("2d");
+          var img = document.getElementById("gambar");
+          ctx.drawImage(img, 0, 0, c.width, c.height);
+        }
+      &lt;/script&gt;
+    </pre>
+  </div>
+  
+
+      <!-- Wrapper 2: Untuk Canvas -->
+      <div class="wrapper-canvas">
+        <h2>Tutorial Canvas pada HTML</h2>
+        <p>Pilih gambar:</p>
+        <img id="gambar" src="../assets/images/wonderfulindonesia.jpeg" alt="Gambar contoh" width="220" height="277" />
+        <p>Mengisi gambar ke dalam canvas:</p>
+        <canvas id="kanvas" width="220" height="277">
+          Your browser does not support the HTML5 canvas tag.
+        </canvas>
+        <p><button class="run-button" onclick="kanvas()">Coba</button></p>
+      </div>
+
+       <!-- --------------- FOOTER --------------- --> 
+       <footer>
+        <div class="top-footer">
+          <!-- <p>Tutorial</p> -->
+        </div>
+        <div class="middle-footer">
+          <ul class="footer-menu">
+            <li class="footer_menu_list">
+              <a href="../index.html">Home</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="../index.html #about">About</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="../index.html #projects">Projects</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="../index.html #contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-social-icons">
+          <div class="icon">
+            <a href="https://www.instagram.com/hermanpr._/" target="_blank" rel="noopener noreferrer">
+              <i class="uil uil-instagram"></i>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="https://www.linkedin.com/in/hermanprakoso1" target="_blank" rel="noopener noreferrer">
+              <i class="uil uil-linkedin-alt"></i>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="https://github.com/Tenku01" target="_blank" rel="noopener noreferrer">
+              <i class="uil uil-github-alt"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="bottom-footer">
+          <p>
+            Copyright &copy;
+            <a href="../index.html" style="text-decoration: none">Herm</a> - All
+            rights reserved
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ----- SCRIPT ----- -->
+    <script>
+      function kanvas() {
+        var c = document.getElementById("kanvas");
+        var ctx = c.getContext("2d");
+        var img = document.getElementById("gambar");
+        ctx.drawImage(img, 0, 0, c.width, c.height);
+      }
+    </script>
+  </body>
+</html>
