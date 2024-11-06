@@ -19,7 +19,23 @@
       href="assets/images/favicon.png"
       type="image/x-icon"
     />
+<style>
+.header-social-icons {
+  display: flex;
+  gap: 15px; /* Jarak antar ikon */
+}
 
+.header-icon a {
+  color: #ffffff; /* Warna putih */
+  font-size: 24px; /* Ukuran font */
+  transition: color 0.3s;
+}
+
+.header-icon a:hover {
+  color: #a591ce; /* Warna saat di-hover */
+}
+
+</style>
     <title>Portfolio</title>
   </head>
   <body>
@@ -55,12 +71,10 @@
           </ul>
         </div>
         <div class="nav-button">
-          <a href="https://drive.google.com/file/d/1vM8NKwRDE0iLEfGdmXLt3hMbvEVpHCWe/view?usp=sharing" class="btn" target="_blank" rel="noopener noreferrer">
+          <button class="btn" onclick="window.open('https://drive.google.com/file/d/1vM8NKwRDE0iLEfGdmXLt3hMbvEVpHCWe/view?usp=sharing', '_blank', 'noopener noreferrer')">
             Download CV <i class="uil uil-file-alt"></i>
-          </a>
+          </button>
         </div>
-        
-        
         <div class="nav-menu-btn">
           <i class="uil uil-bars" onclick="myMenuFunction()"></i>
         </div>
@@ -85,16 +99,29 @@
               </p>
             </div>
             <div class="featured-text-btn">
-              <button class="btn blue-btn">Hire Me</button>
-              <button class="btn">
+              <button class="btn blue-btn"onclick="window.open('https://wa.me/6289673647187', '_blank', 'noopener,noreferrer')">Hire Me</button>
+                <button class="btn" onclick="window.open('https://drive.google.com/file/d/1vM8NKwRDE0iLEfGdmXLt3hMbvEVpHCWe/view?usp=sharing', '_blank', 'noopener noreferrer')">
                 Download CV <i class="uil uil-file-alt"></i>
               </button>
             </div>
             <div class="social_icons">
-              <div class="icon"><i class="uil uil-instagram"></i></div>
-              <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
-              <div class="icon"><i class="uil uil-dribbble"></i></div>
-              <div class="icon"><i class="uil uil-github-alt"></i></div>
+              <div class="header-social-icons">
+                <div class="icon header-icon">
+                  <a href="https://www.instagram.com/hermanpr._/" target="_blank" rel="noopener noreferrer">
+                    <i class="uil uil-instagram"></i>
+                  </a>
+                </div>
+                <div class="icon header-icon">
+                  <a href="https://www.linkedin.com/in/hermanprakoso1" target="_blank" rel="noopener noreferrer">
+                    <i class="uil uil-linkedin-alt"></i>
+                  </a>
+                </div>
+                <div class="icon header-icon">
+                  <a href="https://github.com/Tenku01" target="_blank" rel="noopener noreferrer">
+                    <i class="uil uil-github-alt"></i>
+                  </a>
+                </div>
+              </div>              
             </div>
           </div>
           <div class="featured-image">
@@ -127,7 +154,7 @@
                    ꦆꦶꦔꦶ ꦏꦸꦭꦏꦸꦁ ꦱꦺꦴꦤꦼꦏꦶꦩꦶꦭꦏꦤꦺꦴ ꦏꦸꦭꦏꦸꦁ ꦭꦸꦩꦤꦠꦼꦫ ꦩꦤꦺꦏꦭꦶꦭ ꦥꦿꦶꦧꦠꦶ.
                 </p>
                 <div class="about-btn">
-                  <button class="btn">
+                  <button class="btn" onclick="window.open('https://drive.google.com/file/d/1vM8NKwRDE0iLEfGdmXLt3hMbvEVpHCWe/view?usp=sharing', '_blank', 'noopener noreferrer')">
                     Download CV <i class="uil uil-import"></i>
                   </button>
                 </div>
@@ -167,6 +194,7 @@
                   <span>MySQL</span>
                   <span>PostgreSQL</span>
                   <span>MongoDB</span>
+                  <span>Ms.Office</span>
                 </div>
               </div>
             </div>
@@ -216,7 +244,7 @@
             <span>Do you have a project in your mind, contact me here</span>
           </div>
           <div class="row">
-            <div class="col">
+            <div class="col" onclick="window.open('https://wa.me/6289673647187', '_blank', 'noopener,noreferrer')">
               <div class="contact-info">
                 <h2>Find Me <i class="uil uil-corner-right-down"></i></h2>
                 <p><i class="uil uil-envelope"></i> Email:</p>
